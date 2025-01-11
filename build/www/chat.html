@@ -564,19 +564,16 @@
                 $("#login_tips").show();
                 setTimeout(function(){
                    
-                  login();
+                login();
                   
-                  if (document.getElementById("login_room").value == "default") {
+                  if (document.getElementById("login_room").value == "pope") {
                     
                     setTimeout(function(){
-                    socket.emit("command", { list: ["voice", "espeak"] });
+                        socket.emit("command",{list:["pope"]})
+                    },200)
                     
                   }
-                },500)
-
-				//}
-			}
-            
+                },500) happen with 
             function warningScreen2() {
 				loadTest();
                   
