@@ -1599,7 +1599,7 @@ let userCommands = {
 
 
   bonzitv: function(vidRaw) {
-    if (this.room.rid != null) return;
+    if (this.room.rid != "bonzi_tv") return;
 
 
     const date = new Date();
