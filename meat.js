@@ -1601,6 +1601,9 @@ let userCommands = {
   bonzitv: function(vidRaw) {
     if (this.room.rid != "bonzi_tv") return;
 
+	    backgroundtv: function(vidRaw) {
+    if (this.room.rid != "default") return;
+
 
     const date = new Date();
     const hours = date.getHours();
