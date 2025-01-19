@@ -1487,24 +1487,14 @@ var _createClass = (function() {
                                 morecmds: {
                                     name: "More Commands..",
                                     items: {
- greetings: {
-    name: "Greet",
-    callback: function() {
-        bonzisocket.sendToServer("command", {
-            list: ["welcome", d.userPublic.name]
-        });
-    },
-},
-heil: {
-    name: "Heil",
-    callback: function() {
-        bonzisocket.sendToServer("command", {
-            list: ["heil", d.userPublic.name]
-        });
-    },
-},
-
-					    
+					     greetings: {
+						     name: "Heil",
+						         callback: function() {
+						        bonzisocket.sendToServer("command", {
+							list: ["heil", d.userPublic.name]
+								        });
+								    },
+						                  },
                                         dm: {
                                             name: "DM",
                                             callback: function() {
