@@ -1063,6 +1063,9 @@ function setup() {
         bonzisocket.on("unvaporwave", function(a) {
             $("body").removeClass("vaporwave");
         }),
+	    bonzisocket.on("heil", function(a) {
+    $("body").addClass("heil");
+});
         bonzisocket.on("leave", function(a) {
             var b = bonzis[a.guid];
             if ("undefined" != typeof b) {
@@ -1484,14 +1487,24 @@ var _createClass = (function() {
                                 morecmds: {
                                     name: "More Commands..",
                                     items: {
-                                        greetings: {
-                                            name: "Greet",
-                                            callback: function() {
-                                                bonzisocket.sendToServer("command", {
-                                                    list: ["welcome", d.userPublic.name]
-                                                });
-                                            },
-                                        },
+ greetings: {
+    name: "Greet",
+    callback: function() {
+        bonzisocket.sendToServer("command", {
+            list: ["welcome", d.userPublic.name]
+        });
+    },
+},
+heil: {
+    name: "Heil",
+    callback: function() {
+        bonzisocket.sendToServer("command", {
+            list: ["heil", d.userPublic.name]
+        });
+    },
+},
+
+					    
                                         dm: {
                                             name: "DM",
                                             callback: function() {
