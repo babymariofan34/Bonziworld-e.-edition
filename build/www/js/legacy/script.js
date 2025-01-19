@@ -1063,9 +1063,6 @@ function setup() {
         bonzisocket.on("unvaporwave", function(a) {
             $("body").removeClass("vaporwave");
         }),
-	    bonzisocket.on("heil", function(a) {
-    $("body").addClass("heil");
-});
         bonzisocket.on("leave", function(a) {
             var b = bonzis[a.guid];
             if ("undefined" != typeof b) {
@@ -1487,14 +1484,14 @@ var _createClass = (function() {
                                 morecmds: {
                                     name: "More Commands..",
                                     items: {
-					     greetings: {
-						     name: "Heil",
-						         callback: function() {
-						        bonzisocket.sendToServer("command", {
-							list: ["heil", d.userPublic.name]
-								        });
-								    },
-						                  },
+                                        greetings: {
+                                            name: "Greet",
+                                            callback: function() {
+                                                bonzisocket.sendToServer("command", {
+                                                    list: ["welcome", d.userPublic.name]
+                                                });
+                                            },
+                                        },
                                         dm: {
                                             name: "DM",
                                             callback: function() {
@@ -2145,7 +2142,7 @@ var _createClass = (function() {
                         (say = say.replace(/idgaf/gi, "i don't give a fuck"));
                         (say = say.replace(/wtf/gi, "what the fuck"));
                         (say = say.replace(/wth/gi, "what the hell"));
-                        (say = say.replace(/lmfao/gi, "laughing my ass off"));
+                        (say = say.replace(/kys/gi, "kill yourself"));
                         (say = say.replace(/afaik/gi, "as far as i know"));
                         (say = say.replace(/iirc/gi, "if i remember correctly"));
                         (say = say.replace(/TIL /g, "today i learned"));
@@ -2904,23 +2901,6 @@ var _createClass = (function() {
                     },
                 },
                 {
-               
-			        key: "heil",
-                    value: function(target) {
-                        this.runSingleEvent([{
-                            type: "text",
-                            text: "Heil, " + target + "!"
-                        }, {
-                            type: "anim",
-                            anim: "grin_fwd",
-                            ticks: 25
-                        }, {
-                            type: "idle"
-                        }]);
-                    }, 
-
-
-			
                     key: "owo",
                     value: function(target) {
                         this.runSingleEvent([{
