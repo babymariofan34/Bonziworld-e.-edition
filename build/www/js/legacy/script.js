@@ -1,5 +1,3 @@
-// this code is jank
-// now i understand why everyone calls me a skid  ~ itzcrazyscout
 
 ("use strict");
 var admin = false;
